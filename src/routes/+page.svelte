@@ -77,32 +77,32 @@
 
     <aside>
         <button class="reveal-1" on:click={() => selectedProject = -1}>
-            <p>Présentation<br>
+            <p class:texteDecale={selectedProject === -1}>Présentation<br>
                 générale</p>
         </button>
         <div  class="reveal-15" />
         <button class="reveal-2" on:click={() => selectedProject = 0}>
-            <p> GTI - Site web </p>
-            <p> Réalisé avec SvelteKit </p>
-            <p> Projet pour un client </p>
+            <p class:texteDecale={selectedProject === 0}> GTI - Site web </p>
+            <p class:texteDecale={selectedProject === 0}> Réalisé avec SvelteKit </p>
+            <p class:texteDecale={selectedProject === 0}> Projet pour un client </p>
         </button>
         <div  class="reveal-25"/>
         <button class="reveal-3" on:click={() => selectedProject = 1}>
-            <p> VM - Réseau </p>
-            <p> Config poste de travail </p>
-            <p> Projet d'école </p>
+            <p class:texteDecale={selectedProject === 1}> VM - Réseau </p>
+            <p class:texteDecale={selectedProject === 1}> Config poste de travail </p>
+            <p class:texteDecale={selectedProject === 1}> Projet d'école </p>
         </button>
         <div  class="reveal-35"/>
         <button class="reveal-4" on:click={() => selectedProject = 2}>
-            <p> Ilyva - jeu </p>
-            <p> Réalisé avec godot </p>
-            <p> Projet d'école </p>
+            <p class:texteDecale={selectedProject === 2}> Ilyva - jeu </p>
+            <p class:texteDecale={selectedProject === 2}> Réalisé avec godot </p>
+            <p class:texteDecale={selectedProject === 2}> Projet d'école </p>
         </button>
         <div  class="reveal-45"/>
         <button class="reveal-5" on:click={() => selectedProject = 3}>
-            <p> BDD J.O. - SQL </p>
-            <p> Requêtage et gestion </p>
-            <p> Projet d'école </p>
+            <p class:texteDecale={selectedProject === 3}> BDD J.O. - SQL </p>
+            <p class:texteDecale={selectedProject === 3}> Requêtage et gestion </p>
+            <p class:texteDecale={selectedProject === 3}> Projet d'école </p>
         </button>
     </aside>
     <img src="/main.jpg" alt="Montagnes blanches refletées sur un lac">
@@ -118,7 +118,7 @@
                     Si vous êtes un professionnel interessé par mes projets vous serez surement également interessé par <a href="https://cv-svelte-ruby.vercel.app/">mon CV</a> réalisé avec SvelteKit.</p>
             </div>
         </section>
-        {/if}
+    {/if}
     {:else}
         <Projets {...projets[selectedProject]} /> 
     {/if}
@@ -255,7 +255,7 @@
 
     [class*="reveal-"]{
         opacity: 0;
-        transform: translateX(30px);
+        transform: translateX(-30px);
         transition-property: opacity, transform;
         transition-timing-function: ease;
         transition-duration: 1000ms;
@@ -302,5 +302,10 @@
     :global(.reveal-visible){
         transform: translateX(0)!important;
         opacity: 1!important;
+    }
+
+    .texteDecale {
+        transition-duration: 500ms;
+        transform: translateX(-50px);
     }
 </style>
