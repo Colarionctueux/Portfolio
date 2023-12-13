@@ -13,7 +13,7 @@
 
     const projets = [
         {
-            bgImg:"/bgGti.png",
+            bgImg:"/bgGti2.jpg",
             alt:"site GTI",
             schoolProject:false,
             date:"démarré le 03/11/2023",
@@ -77,29 +77,35 @@
 
     <aside>
         <button class="reveal-1" on:click={() => selectedProject = -1}>
+            <div class:texteDecale={selectedProject === -1} class="blackSide" />
             <p class:texteDecale={selectedProject === -1}>Présentation<br>
                 générale</p>
+            
         </button>
         <div  class="reveal-15" />
         <button class="reveal-2" on:click={() => selectedProject = 0}>
+            <div class:texteDecale={selectedProject === 0} class="blackSide" />
             <p class:texteDecale={selectedProject === 0}> GTI - Site web </p>
             <p class:texteDecale={selectedProject === 0}> Réalisé avec SvelteKit </p>
             <p class:texteDecale={selectedProject === 0}> Projet pour un client </p>
         </button>
         <div  class="reveal-25"/>
         <button class="reveal-3" on:click={() => selectedProject = 1}>
+            <div class:texteDecale={selectedProject === 1} class="blackSide" />
             <p class:texteDecale={selectedProject === 1}> VM - Réseau </p>
             <p class:texteDecale={selectedProject === 1}> Config poste de travail </p>
             <p class:texteDecale={selectedProject === 1}> Projet d'école </p>
         </button>
         <div  class="reveal-35"/>
         <button class="reveal-4" on:click={() => selectedProject = 2}>
+            <div class:texteDecale={selectedProject === 2} class="blackSide" />
             <p class:texteDecale={selectedProject === 2}> Ilyva - jeu </p>
             <p class:texteDecale={selectedProject === 2}> Réalisé avec godot </p>
             <p class:texteDecale={selectedProject === 2}> Projet d'école </p>
         </button>
         <div  class="reveal-45"/>
         <button class="reveal-5" on:click={() => selectedProject = 3}>
+            <div class:texteDecale={selectedProject === 3} class="blackSide" />
             <p class:texteDecale={selectedProject === 3}> BDD J.O. - SQL </p>
             <p class:texteDecale={selectedProject === 3}> Requêtage et gestion </p>
             <p class:texteDecale={selectedProject === 3}> Projet d'école </p>
@@ -122,6 +128,11 @@
     {:else}
         <Projets {...projets[selectedProject]} /> 
     {/if}
+    <div class="none">
+        {#each projets as projet (projet.title)}
+            <img loading="lazy" src={projet.bgImg} alt="" />
+        {/each} 
+    </div>
 
 
 <style>
@@ -172,6 +183,7 @@
     aside p{
         font-size: 1.37em;
         margin: 0;
+        transition: all 500ms ease;
     }
 
     aside div{
@@ -251,6 +263,7 @@
     .main{
         width: 80%;
         padding-left: 10%;
+        box-sizing: border-box
     }
 
     [class*="reveal-"]{
@@ -305,7 +318,19 @@
     }
 
     .texteDecale {
-        transition-duration: 500ms;
-        transform: translateX(-50px);
+        transform: translateX(-40px);
+    }
+
+    .none {
+        display: none;
+    }
+
+    .blackSide {
+        background-color: black;
+        height: 100%;
+        position: absolute;
+        right: -130px;
+        top: 0;
+        transition: all 500ms ease;
     }
 </style>
