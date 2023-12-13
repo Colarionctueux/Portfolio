@@ -3,9 +3,13 @@
     import Projets from "../components/Projets.svelte";
     import initIO from "$lib/initIO";
     import { browser } from "$app/environment";
+    import { fade, blur, fly, slide, scale } from "svelte/transition";
     
     let selectedProject = -1;
     let observer: IntersectionObserver | undefined;
+
+  
+  let show = false;
 
     const projets = [
         {
@@ -56,7 +60,9 @@
             link:"https://github.com/Colarionctueux/sae-bdd"
         },
     ]
-    
+
+    onMount(() => {show = true;});
+
     onMount(() => {
         observer = initIO(document.body, 0.8);
     })
@@ -68,51 +74,55 @@
     })
 </script>
 
-<aside>
-    <button class="reveal-1" on:click={() => selectedProject = -1}>
-        <p>Présentation<br>
-            générale</p>
-    </button>
-    <div  class="reveal-15" />
-    <button class="reveal-2" on:click={() => selectedProject = 0}>
-        <p> GTI - Site web </p>
-        <p> Réalisé avec SvelteKit </p>
-        <p> Projet pour un client </p>
-    </button>
-    <div  class="reveal-25"/>
-    <button class="reveal-3" on:click={() => selectedProject = 1}>
-        <p> VM - Réseau </p>
-        <p> Config poste de travail </p>
-        <p> Projet d'école </p>
-    </button>
-    <div  class="reveal-35"/>
-    <button class="reveal-4" on:click={() => selectedProject = 2}>
-        <p> Ilyva - jeu </p>
-        <p> Réalisé avec godot </p>
-        <p> Projet d'école </p>
-    </button>
-    <div  class="reveal-45"/>
-    <button class="reveal-5" on:click={() => selectedProject = 3}>
-        <p> BDD J.O. - SQL </p>
-        <p> Requêtage et gestion </p>
-        <p> Projet d'école </p>
-    </button>
-</aside>
-<img src="/main.jpg" alt="Montagnes blanches refletées sur un lac">
-<div class="shadow" />
-{#if selectedProject === -1}
-    <section class="main">
-        <h1 class="reveal-10">ECKMAN Nicolas</h1>
-        <div class="reveal-11">
-            <h2>Mes projets</h2>
-            <p>Ce site est la liste des projets que j’ai réalisés jusqu’à aujourd’hui que vous pouvez également retrouver sur <a href="https://github.com/Colarionctueux" target="_blank">mon GitHub</a>.<br>
-                <br>
-                Si vous êtes un professionnel interessé par mes projets vous serez surement également interessé par <a href="https://cv-svelte-ruby.vercel.app/">mon CV</a> réalisé avec SvelteKit.</p>
-        </div>
-    </section>
-{:else}
-    <Projets {...projets[selectedProject]} /> 
-{/if}
+
+    <aside>
+        <button class="reveal-1" on:click={() => selectedProject = -1}>
+            <p>Présentation<br>
+                générale</p>
+        </button>
+        <div  class="reveal-15" />
+        <button class="reveal-2" on:click={() => selectedProject = 0}>
+            <p> GTI - Site web </p>
+            <p> Réalisé avec SvelteKit </p>
+            <p> Projet pour un client </p>
+        </button>
+        <div  class="reveal-25"/>
+        <button class="reveal-3" on:click={() => selectedProject = 1}>
+            <p> VM - Réseau </p>
+            <p> Config poste de travail </p>
+            <p> Projet d'école </p>
+        </button>
+        <div  class="reveal-35"/>
+        <button class="reveal-4" on:click={() => selectedProject = 2}>
+            <p> Ilyva - jeu </p>
+            <p> Réalisé avec godot </p>
+            <p> Projet d'école </p>
+        </button>
+        <div  class="reveal-45"/>
+        <button class="reveal-5" on:click={() => selectedProject = 3}>
+            <p> BDD J.O. - SQL </p>
+            <p> Requêtage et gestion </p>
+            <p> Projet d'école </p>
+        </button>
+    </aside>
+    <img src="/main.jpg" alt="Montagnes blanches refletées sur un lac">
+    <div class="shadow" />
+    {#if selectedProject === -1}
+    {#if show}
+        <section class="main">
+            <h1 transition:fade={{ delay:100, duration:500}}>ECKMAN Nicolas</h1>
+            <div transition:fade={{ delay:500, duration:500 }}>
+                <h2>Mes projets</h2>
+                <p>Ce site est la liste des projets que j’ai réalisés jusqu’à aujourd’hui que vous pouvez également retrouver sur <a href="https://github.com/Colarionctueux" target="_blank">mon GitHub</a>.<br>
+                    <br>
+                    Si vous êtes un professionnel interessé par mes projets vous serez surement également interessé par <a href="https://cv-svelte-ruby.vercel.app/">mon CV</a> réalisé avec SvelteKit.</p>
+            </div>
+        </section>
+        {/if}
+    {:else}
+        <Projets {...projets[selectedProject]} /> 
+    {/if}
+
 
 <style>
     :global(*){
@@ -248,53 +258,45 @@
         transform: translateX(30px);
         transition-property: opacity, transform;
         transition-timing-function: ease;
-        transition-duration: 250ms;
+        transition-duration: 1000ms;
     }
 
     .reveal-1{
-        transition-delay: 100ms;
+        transition-delay: 300ms;
     }
 
     .reveal-15{
-        transition-delay: 150ms;
+        transition-delay: 350ms;
     }
 
     .reveal-2{
-        transition-delay: 200ms;
+        transition-delay: 400ms;
     }
 
     .reveal-25{
-        transition-delay: 250ms;
+        transition-delay: 450ms;
     }
 
     
     .reveal-3{
-        transition-delay: 300ms;
+        transition-delay: 500ms;
     }
 
     .reveal-35{
-        transition-delay: 350ms;
+        transition-delay: 550ms;
     }
 
     
     .reveal-4{
-        transition-delay: 400ms;
+        transition-delay: 600ms;
     }
 
     .reveal-45{
-        transition-delay: 450ms;
+        transition-delay: 650ms;
     }
 
     .reveal-5{
-        transition-delay: 500ms;
-    }
-
-    .reveal-10{
-        transition-delay: 100ms;
-    }
-
-    .reveal-11{
-        transition-delay: 200ms;
+        transition-delay: 700ms;
     }
 
     :global(.reveal-visible){
