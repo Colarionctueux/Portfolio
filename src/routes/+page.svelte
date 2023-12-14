@@ -6,6 +6,7 @@
     import { fade, blur, fly, slide, scale } from "svelte/transition";
     
     let selectedProject = -1;
+    let selectedMain = -1;
     let observer: IntersectionObserver | undefined;
 
   
@@ -114,14 +115,80 @@
     <img src="/main.jpg" alt="Montagnes blanches refletées sur un lac">
     <div class="shadow" />
     {#if selectedProject === -1}
-    {#if show}
+    <nav>
+        <button on:click={() => selectedMain = -1}>
+            <div class:mainDecale={selectedMain === -1} class="blackTop" /> 
+            <p>Présentation</p> 
+        </button>
+        <button on:click={() => selectedMain = 0}> 
+            <div class:mainDecale={selectedMain === 0} class="blackTop" />
+            <p>Compétences </p> 
+        </button>
+        <button on:click={() => selectedMain = 1}>
+            <div class:mainDecale={selectedMain === 1} class="blackTop" />
+            <p>Contacts </p>
+        </button>
+    </nav>
+    {#if selectedMain === -1}        
+        {#if show}
+            <section class="main">
+                <h1 transition:fade={{ delay:100, duration:500}}>ECKMAN Nicolas</h1>
+                <div transition:fade={{ delay:500, duration:500 }}>
+                    <h2>Mes projets</h2>
+                    <p>Actuellement en BUT2 à l'iut de Lille je suis passionné d'informatique et aime apprendre dans tous les domaines.<br>
+                        <br>
+                        Ce site est la liste des projets que j’ai réalisés jusqu’à aujourd’hui que vous pouvez également retrouver sur <a href="https://github.com/Colarionctueux" target="_blank">mon GitHub</a>.<br>
+                        <br>
+                        Si vous êtes un professionnel interessé par mes projets vous serez surement également interessé par <a href="https://cv-svelte-ruby.vercel.app/">mon CV</a> réalisé avec SvelteKit.
+                    </p>
+                </div>
+            </section>
+        {/if}
+        {:else if selectedMain === 0}
+            <section class="competences">
+                <div class="langages">
+                    <img src="/logo-svelte.png" alt="svelte">
+                    <h3> SvelteKit</h3>
+                </div>
+                <div class="langages">
+                    <img src="/bash.png" alt="bash">
+                    <h3> Bash</h3>
+                </div>
+                <div class="langages">
+                    <img src="/css.svg" alt="css">
+                    <h3> CSS</h3>
+                </div>
+                <div class="langages">
+                    <img src="/html.svg" alt="html">
+                    <h3> HTML</h3>
+                </div>
+                <div class="langages">
+                    <img src="/psql.svg" alt="postgresql">
+                    <h3> PostgreSql</h3>
+                </div>
+                <div class="langages">
+                    <img src="/java.svg" alt="java">
+                    <h3> Java</h3>
+                </div>
+                <div class="langages">
+                    <img src="/python.png" alt="python">
+                    <h3> Python</h3>
+                </div>
+                <div class="langages">
+                    <img src="/c.svg" alt="c">
+                    <h3> C</h3>
+                </div>
+            </section>
+        {:else if selectedMain === 1}
         <section class="main">
-            <h1 transition:fade={{ delay:100, duration:500}}>ECKMAN Nicolas</h1>
-            <div transition:fade={{ delay:500, duration:500 }}>
-                <h2>Mes projets</h2>
-                <p>Ce site est la liste des projets que j’ai réalisés jusqu’à aujourd’hui que vous pouvez également retrouver sur <a href="https://github.com/Colarionctueux" target="_blank">mon GitHub</a>.<br>
-                    <br>
-                    Si vous êtes un professionnel interessé par mes projets vous serez surement également interessé par <a href="https://cv-svelte-ruby.vercel.app/">mon CV</a> réalisé avec SvelteKit.</p>
+            <div>
+                <h2>Contacts</h2>
+                <p>Contactez moi par mail : <br>
+                    <a href="mailto:nicolas.eckmanpro@gmail.com">nicolas.eckmanpro@gmail.com</a> <br>
+                <br>
+                Ou par téléphone :<br>
+                07 71 85 23 08
+                </p>
             </div>
         </section>
     {/if}
@@ -181,6 +248,47 @@
         cursor: pointer;
     }
 
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background-color: white;
+        height: 15%;
+        width: 500px;
+        border-radius: 0 0 10px 0;
+    }
+
+    nav button {
+        background-color: white;
+        height: 75%;
+        width: 33.9%;
+        font-size: 1.37em;
+        border: none;
+        position: relative;
+    }
+
+    nav p {
+        transition: all 200ms ease;
+    }
+
+    .mainDecale {
+        transform: translateY(15px);
+    }
+
+    .blackTop{
+        background-color: rgb(21, 21, 21);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: -115%;
+        transition: all 500ms ease;
+    }
+
     aside p{
         font-size: 1.37em;
         margin: 0;
@@ -206,7 +314,7 @@
         z-index: 0;
     }
 
-    section:first-of-type {
+    .main {
         position: relative;
         z-index: 1;
         display: flex;
@@ -219,7 +327,7 @@
         font-weight: 700;
         font-size: 3.25em;
         position: absolute;
-        top: 100px;
+        top: 120px;
         left: 10%;
     }
 
@@ -231,18 +339,18 @@
         font-weight: 300;
     }
     
-    section:first-of-type p {
+    .main p {
         color: white;
         font-size: 1.81em;
         margin: 0;
         font-weight: 300;
     }
 
-    section:first-of-type div {
+    .main div {
         position: absolute;
-        top: 230px;
+        top: 250px;
         left: 10%;
-        width: 700px;
+        width: 75%;
         padding: 20px;
         background-color: rgba(129, 129, 129, 0.29);
         backdrop-filter: blur(35px);
@@ -254,17 +362,55 @@
         text-decoration-thickness: 1px;
     }
 
-    section:last-of-type {
-        position: absolute;
-        z-index: 9;
-        top: 0;
-        left: 0;
-    }
-
     .main{
         width: 80%;
         padding-left: 10%;
         box-sizing: border-box
+    }
+
+    .competences {
+        padding-top: 200px;
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    
+    .langages{
+        background-color: white;
+        width: 300px;
+        height: 100px;
+        position: relative;
+        top: 25%;
+        left: 5%;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 3px solid black;
+        box-shadow: 0 0 20px rgb(0, 0, 0);
+        margin: 20px;
+        transition: all .3s ease;
+    }
+
+    .langages:hover {
+        transform: scale(1.02);
+    }
+    
+    .competences img{
+        object-fit: cover;
+        height: 75%;
+        width: auto;
+        z-index: 10;
+        padding: 20px;
+    }
+
+    h3{
+        color: black;
+        margin-left: 40%;
+        z-index: 10;
+        font-size: 2em;
     }
 
     [class*="reveal-"]{
