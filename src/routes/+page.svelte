@@ -21,7 +21,7 @@
             title:"GTI",
             logo:true,
             logoImg:"/logo-gti.svg",
-            text:"Ce projet est un site web réalisé pour un client avec SvelteKit. Site vitrine mais également utilitaire pour le les clients aillent chercher les fiches techniques. Actuellement en développement, la partie BackEnd sera réalisée avec Node.js.",
+            text:"Ce projet est un site web réalisé pour un client avec SvelteKit. Site vitrine mais également utilitaire pour que les clients aillent chercher les fiches techniques. Actuellement en développement, la partie BackEnd sera réalisée avec Node.js.",
             usedSkills:"/logo-svelte.png",
             unusedSkills:"/logo-jsnb.png",
             link:"https://gti-mu.vercel.app/"
@@ -34,7 +34,7 @@
             title:"Installation et configuration d’un poste de travail",
             logo:false,
             logoImg:"/logo-gti.svg",
-            text:"Nous avons créé une machine virtuelle fonctionnant sous Debian 11 puis nous l’avons configuré en installant des logiciels et en préparant un fichier de pré-configuration pour les fois d’apres, nous avons ensuite installé Gitea.",
+            text:"Nous avons créé une machine virtuelle fonctionnant sous Debian 11, puis nous l’avons configurée en installant des logiciels et en préparant un fichier de pré-configuration pour les fois d’apres, nous avons ensuite installé Gitea.",
             usedSkills:"/bash.png",
             link:"https://gitlab.univ-lille.fr/etu/2023-2024/s303/h-eckman-tourneur-belguebli"
         },
@@ -57,7 +57,7 @@
             date:"démarré le 01/03/2023 terminé le 14/04/2023",
             title:"Base de donnée SQL Statistiques",
             logo:false,
-            text:"Dans ce projet nous avons du réaliser une base de donnée PostgreSQL conforme a partir d’un fichier CSV regroupant les athlètes de tous les J.O. Nous avons ensuite réalisé du requêtage pour ensuite faire des statistiques mathématiques.",
+            text:"Dans ce projet nous avons du réaliser une base de donnée PostgreSQL conforme à partir d’un fichier CSV regroupant les athlètes de tous les J.O. Nous avons ensuite réalisé du requêtage pour ensuite faire des statistiques mathématiques.",
             usedSkills:"/postgresql.png",
             link:"https://github.com/Colarionctueux/sae-bdd"
         },
