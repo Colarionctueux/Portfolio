@@ -36,6 +36,7 @@
             logoImg:"/logo-gti.svg",
             text:"Nous avons créé une machine virtuelle fonctionnant sous Debian 11 puis nous l’avons configuré en installant des logiciels et en préparant un fichier de pré-configuration pour les fois d’apres, nous avons ensuite installé Gitea.",
             usedSkills:"/bash.png",
+            link:"https://gitlab.univ-lille.fr/etu/2023-2024/s303/h-eckman-tourneur-belguebli"
         },
         {
             bgImg:"/bgIlyva.png",
