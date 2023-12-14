@@ -135,11 +135,11 @@
                 <h1 transition:fade={{ delay:100, duration:500}}>ECKMAN Nicolas</h1>
                 <div transition:fade={{ delay:500, duration:500 }}>
                     <h2>Mes projets</h2>
-                    <p>Actuellement en BUT2 à l'iut de Lille je suis passionné d'informatique et aime apprendre dans tous les domaines.<br>
+                    <p>Actuellement en études superieures depuis 2 ans, je suis étudiant en BUT2 à l'iut de Lille je suis passionné d'informatique et aime apprendre dans tous les domaines.<br>
                         <br>
                         Ce site est la liste des projets que j’ai réalisés jusqu’à aujourd’hui que vous pouvez également retrouver sur <a href="https://github.com/Colarionctueux" target="_blank">mon GitHub</a>.<br>
                         <br>
-                        Si vous êtes un professionnel interessé par mes projets vous serez surement également interessé par <a href="https://cv-svelte-ruby.vercel.app/">mon CV</a> réalisé avec SvelteKit.
+                        Si vous êtes un professionnel interessé par mes projets vous serez surement également interessé par <a href="https://cv-svelte-ruby.vercel.app/" target="_blank">mon CV</a> réalisé avec SvelteKit.
                     </p>
                 </div>
             </section>
@@ -474,7 +474,7 @@
 
     .blackSide {
         background-color: rgb(21, 21, 21);
-        height: 100%;
+        height: 101%;
         position: absolute;
         right: -130px;
         top: 0;
