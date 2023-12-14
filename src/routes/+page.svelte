@@ -178,6 +178,7 @@
         border: none;
         padding: 0;
         padding-right: 20%;
+        cursor: pointer;
     }
 
     aside p{
@@ -326,11 +327,17 @@
     }
 
     .blackSide {
-        background-color: black;
+        background-color: rgb(21, 21, 21);
         height: 100%;
         position: absolute;
         right: -130px;
         top: 0;
         transition: all 500ms ease;
+    }
+
+    @media screen and (max-width: 500px){
+        aside p {
+            font-size: 1em;
+        }
     }
 </style>
