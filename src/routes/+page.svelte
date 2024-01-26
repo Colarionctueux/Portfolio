@@ -34,7 +34,7 @@
             title:"Installation et configuration d’un poste de travail",
             logo:false,
             logoImg:"/logo-gti.svg",
-            text:"Nous avons créé une machine virtuelle fonctionnant sous Debian 11, puis nous l’avons configurée en installant des logiciels et en préparant un fichier de pré-configuration pour les fois d’apres, nous avons ensuite installé Gitea.",
+            text:"Nous avons créé une machine virtuelle fonctionnant sous Debian 11, puis nous l’avons configurée en installant des logiciels et en préparant un fichier de pré-configuration pour les fois d’après, nous avons ensuite installé Gitea.",
             usedSkills:"/bash.png",
             link:"https://gitlab.univ-lille.fr/etu/2023-2024/s303/h-eckman-tourneur-belguebli"
         },
@@ -57,7 +57,7 @@
             date:"démarré le 01/03/2023 terminé le 14/04/2023",
             title:"Base de donnée SQL Statistiques",
             logo:false,
-            text:"Dans ce projet nous avons du réaliser une base de donnée PostgreSQL conforme à partir d’un fichier CSV regroupant les athlètes de tous les J.O. Nous avons ensuite réalisé du requêtage pour ensuite faire des statistiques mathématiques.",
+            text:"Dans ce projet nous avons réalisé une base de données PostgreSQL conforme à partir d’un fichier CSV regroupant les athlètes de tous les J.O. Nous avons ensuite réalisé du requêtage pour ensuite faire des statistiques mathématiques.",
             usedSkills:"/postgresql.png",
             link:"https://github.com/Colarionctueux/sae-bdd"
         },
@@ -136,11 +136,11 @@
                 <h1 transition:fade={{ delay:100, duration:500}}>ECKMAN Nicolas</h1>
                 <div transition:fade={{ delay:500, duration:500 }}>
                     <h2>Mes projets</h2>
-                    <p>Actuellement en études superieures depuis 2 ans, je suis étudiant en BUT2 à l'iut de Lille je suis passionné d'informatique et aime apprendre dans tous les domaines.<br>
+                    <p>Actuellement en études supérieures depuis 2 ans, je suis étudiant en BUT2 à l'IUT de Lille je suis passionné d'informatique et aime apprendre dans tous les domaines.<br>
                         <br>
                         Ce site est la liste des projets que j’ai réalisés jusqu’à aujourd’hui, que vous pouvez également retrouver sur <a href="https://github.com/Colarionctueux" target="_blank">mon GitHub</a>.<br>
                         <br>
-                        Si vous êtes un professionnel interessé par mes projets vous serez surement également interessé par <a href="https://cv-svelte-ruby.vercel.app/" target="_blank">mon CV</a> réalisé avec SvelteKit.
+                        Si vous êtes un professionnel interessé par mes projets vous serez également également interessé par <a href="https://cv-svelte-ruby.vercel.app/" target="_blank">mon CV</a> réalisé avec SvelteKit.
                     </p>
                 </div>
             </section>
