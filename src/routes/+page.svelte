@@ -36,19 +36,18 @@
             logoImg:"/logo-gti.svg",
             text:"Nous avons créé une machine virtuelle fonctionnant sous Debian 11, puis nous l’avons configurée en installant des logiciels et en préparant un fichier de pré-configuration pour les fois d’après, nous avons ensuite installé Gitea.",
             usedSkills:"/bash.png",
-            link:"https://gitlab.univ-lille.fr/etu/2023-2024/s303/h-eckman-tourneur-belguebli"
         },
         {
-            bgImg:"/bgIlyva.png",
-            alt:"affiche ilyva",
+            bgImg:"/odoo.jpg",
+            alt:"Odoo",
             schoolProject:true,
-            date:"démarré le 01/01/2023 terminé le 30/05/2023",
-            title:"ILYVA",
+            date:"démarré le 19/02/2024",
+            title:"Déploiement Odoo",
             logo:true,
-            logoImg:"/ilyvalogo.png",
-            text:"Ilyva est un escape game réalisé avec godot engine ayant pour but de faire réviser Bash. Pour le site nous avons utilisé SvelteKit et stylisé avec SCSS. Nous avons également utilisé l’api Discord pour récuperer les photos de profil.",
-            usedSkills:"/logo-svelte.png,/logo-godot.svg",
-            link:"https://ilyva.sciencesky.fr/"
+            logoImg:"/odoo.png",
+            text:"Odoo est un logiciel de gestion d'affaires Open source. Nous sommes chargés d'en déployer un à l'aide de machines virtuelles et de docker. Odoo a besoin d'une base de données que nous avons donc réalisé à l'aide d'un conteneur Docker avec PostgreSQL. Il nous a également été demandé de mettre en place un reverse proxy.",
+            usedSkills:"/docker.svg,/bash.png",
+            link:"https://github.com/Colarionctueux/SAE-odoo"
         },
         {
             bgImg:"/bgJo.jpg",
@@ -101,8 +100,8 @@
         <div  class="reveal-35"/>
         <button class="reveal-4" on:click={() => selectedProject = 2}>
             <div class:texteDecale={selectedProject === 2} class="blackSide" />
-            <p class:texteDecale={selectedProject === 2}> Ilyva - jeu </p>
-            <p class:texteDecale={selectedProject === 2}> Réalisé avec godot </p>
+            <p class:texteDecale={selectedProject === 2}> Odoo - Réseau </p>
+            <p class:texteDecale={selectedProject === 2}> Déploiement d'application </p>
             <p class:texteDecale={selectedProject === 2}> Projet d'école </p>
         </button>
         <div  class="reveal-45"/>
@@ -178,6 +177,10 @@
                 <div class="langages">
                     <img src="/c.svg" alt="c">
                     <h3> C</h3>
+                </div>
+                <div class="langages">
+                    <img src="/docker.svg" alt="docker">
+                    <h3> Docker</h3>
                 </div>
             </section>
         {:else if selectedMain === 1}
