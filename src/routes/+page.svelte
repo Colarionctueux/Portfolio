@@ -45,7 +45,7 @@
             title:"Déploiement Odoo",
             logo:true,
             logoImg:"/odoo.png",
-            text:"Odoo est un logiciel de gestion d'affaires Open source. Nous sommes chargés d'en déployer un à l'aide de machines virtuelles et de docker. Odoo a besoin d'une base de données que nous avons donc réalisé à l'aide d'un conteneur Docker avec PostgreSQL. Il nous a également été demandé de mettre en place un reverse avec traefik.",
+            text:"Odoo est un logiciel de gestion d'affaires Open source. Nous sommes chargés d'en déployer un à l'aide de machines virtuelles et de docker. Odoo a besoin d'une base de données que nous avons donc réalisé à l'aide d'un conteneur Docker avec PostgreSQL. Il nous a également été demandé de mettre en place un reverse proxy avec traefik.",
             usedSkills:"/docker.svg,/bash.png",
             link:"https://github.com/Colarionctueux/SAE-odoo"
         },
