@@ -17,7 +17,7 @@
             bgImg:"/bgGti2.jpg",
             alt:"site GTI",
             schoolProject:false,
-            date:"démarré le 03/11/2023",
+            date:"démarré le 03/11/2023 en pause",
             title:"GTI",
             logo:true,
             logoImg:"/logo-gti.svg",
