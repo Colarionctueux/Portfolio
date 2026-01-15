@@ -17,7 +17,7 @@
             bgImg:"/bgGti2.jpg",
             alt:"site GTI",
             schoolProject:false,
-            date:"démarré le 03/11/2023",
+            date:"",
             title:"GTI",
             logo:true,
             logoImg:"/logo-gti.svg",
@@ -41,7 +41,7 @@
             bgImg:"/odoo.jpg",
             alt:"Odoo",
             schoolProject:true,
-            date:"démarré le 19/02/2024",
+            date:"effectué le 19/02/2024",
             title:"Déploiement Odoo",
             logo:true,
             logoImg:"/odoo.png",
@@ -135,11 +135,11 @@
                 <h1 transition:fade={{ delay:100, duration:500}}>ECKMAN Nicolas</h1>
                 <div transition:fade={{ delay:500, duration:500 }}>
                     <h2>Mes projets</h2>
-                    <p>Actuellement en études supérieures depuis 2 ans, je suis étudiant en BUT2 à l'IUT de Lille je suis passionné d'informatique et aime apprendre dans tous les domaines.<br>
+                    <p>Actuellement étudiant en BUT3 à l'IUT de Lille, je suis passionné d'informatique et j'aime apprendre dans tous les domaines en mettant ma curiosité à l'épreuve.<br>
                         <br>
-                        Ce site est la liste des projets que j’ai réalisés jusqu’à aujourd’hui, que vous pouvez également retrouver sur <a href="https://github.com/Colarionctueux" target="_blank">mon GitHub</a>.<br>
+                        Ce site est la liste de quelques projets que j’ai réalisés jusqu’à aujourd’hui.<br>
                         <br>
-                        Si vous êtes un professionnel interessé par mes projets vous serez également également interessé par <a href="https://cv-svelte-ruby.vercel.app/" target="_blank">mon CV</a> réalisé avec SvelteKit.
+                        Si vous êtes un professionnel interessé par mes projets vous serez également également interessé par <a href="https://nextcloud.univ-lille.fr/index.php/s/2SmfLQfB2nt8585" target="_blank">mon CV</a>.
                     </p>
                 </div>
             </section>
@@ -182,7 +182,19 @@
                     <img src="/docker.svg" alt="docker">
                     <h3> Docker</h3>
                 </div>
-            </section>
+                <div class="langages">
+                    <img src="/vagrant.png" alt="vagrant">
+                    <h3> Vagrant</h3>
+                </div>
+                <div class="langages">
+                    <img src="/ansible.png" alt="ansible">
+                    <h3> Ansible</h3>
+                </div>
+                <div class="langages">
+                    <img src="/terraform.png" alt="terraform">
+                    <h3> Terraform</h3>
+                </div>
+                </section>
         {:else if selectedMain === 1}
         <section class="main">
             <div>
